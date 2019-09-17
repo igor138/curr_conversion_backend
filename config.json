@@ -1,3 +1,12 @@
 {
-    "apiKey": "0a4aedefb7214f10a788ae265f6a4d32"
+  "apiKey": "0a4aedefb7214f10a788ae265f6a4d32",
+  "db": {
+    "client": "mysql",
+    "connection": {
+      "host" : "test.cqc0ao2cns7z.eu-central-1.rds.amazonaws.com",
+      "user" : "admin",
+      "password" : "123admin123",
+      "database" : "innodb"
+    }
+  }
 }

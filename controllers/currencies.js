@@ -4,8 +4,8 @@ import { getCurrencies } from '../models/currencies'
 
 const router = Router()
 
-router.get('/', (req, res) => {
-  const currencies = getCurrencies()
+router.get('/', async (_, res) => {
+  const currencies = await getCurrencies()
   res.send(currencies)
 })
 

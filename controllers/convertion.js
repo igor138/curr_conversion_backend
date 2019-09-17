@@ -9,10 +9,9 @@ router.post('/', (req, res) => {
   res.send(convereted)
 })
 
-router.get('/', (req, res) => {
-  const stats = getStats()
+router.get('/', async (_, res) => {
+  const stats = await getStats()
   res.send(stats)
 })
 
 export default router
-
