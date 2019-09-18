@@ -8,5 +8,6 @@
       "password" : "123admin123",
       "database" : "innodb"
     }
-  }
+  },
+  "port": 3300
 }

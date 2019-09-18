@@ -1,11 +1,11 @@
 import { Router } from 'express'
 
-import convertionController from './convertion'
+import conversionController from './conversion'
 import currenciesController from './currencies'
 
 const router = Router()
 
-router.use('/convertion', convertionController)
+router.use('/conversion', conversionController)
 router.use('/currency', currenciesController)
 
 export default router
