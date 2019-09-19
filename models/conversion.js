@@ -1,9 +1,11 @@
 import knex from '../db'
 import axios from 'axios'
-import { apiKey } from '../config.json'
+import { api } from '../config.json'
+
+const { url, key } = api
 
 const fetchRates = async (source, dest) => {
-  const reqUrl = `https://openexchangerates.org/api/latest.json?app_id=${apiKey}&symbols=${source},${dest}`
+  const reqUrl = `${url}/latest.json?app_id=${key}&symbols=${source},${dest}`
   const response = await axios.get(reqUrl)
   const rates = response.data.rates
   return {

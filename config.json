@@ -1,5 +1,8 @@
 {
-  "apiKey": "0a4aedefb7214f10a788ae265f6a4d32",
+  "api": {
+    "url": "https://openexchangerates.org/api",
+    "key": "0a4aedefb7214f10a788ae265f6a4d32"
+  },
   "db": {
     "client": "mysql",
     "connection": {
