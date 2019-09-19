@@ -1,5 +1,4 @@
 import { Router } from 'express'
-
 import conversionController from './conversion'
 import currenciesController from './currencies'
 

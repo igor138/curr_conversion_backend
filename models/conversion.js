@@ -14,17 +14,26 @@ const fetchRates = async (source, dest) => {
   }
 }
 
+const validate = ({ sourceCurrency, destCurrency, amount }) => 
+  /^[A-Z]{3}$/.test(sourceCurrency) 
+    && /^[A-Z]{3}$/.test(destCurrency) 
+    && /^\d+.\d*$/.test(amount)
+
 export const add = async ({ sourceCurrency, destCurrency, amount }) => {
+  if (!validate({ sourceCurrency, destCurrency, amount })) throw new Error('Access denied')
+  
   const rates = await fetchRates(sourceCurrency, destCurrency)
   const amountUsd = amount / rates.sourceRate
   const converted = amountUsd * rates.destRate
-  knex('conversions').insert({
-    sourceCurrency,
-    destCurrency,
-    amount,
-    amountUsd
-  })
-  .then(_=>_)
+  knex('conversions')
+    .insert({
+      sourceCurrency,
+      destCurrency,
+      amount,
+      amountUsd
+    })
+    .then(_=>_)
+    .catch(e => console.error({ 'db error': e.message }))
 
   return { response: converted }
 }

@@ -1,6 +1,5 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-
 import controller from './controllers'
 import { port } from './config.json'
 

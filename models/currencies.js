@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 import { api } from '../config.json'
 
 const { url, key } = api
